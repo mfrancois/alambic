@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+
+Route::get('/', 'ProjectController@index');
+Route::get('{firstPart}/{rest}', 'ProjectController@show')->where('firstPart', '[^/]*')->where('rest', '.*');
