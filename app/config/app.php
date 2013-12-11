@@ -179,7 +179,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-        'Markdown'        => 'VTalbot\Markdown\Facades\Markdown',
+        'Markdown'      => 'VTalbot\Markdown\Facades\Markdown',
 
 	),
 
