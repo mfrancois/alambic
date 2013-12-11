@@ -13,4 +13,6 @@
 
 
 Route::get('/', 'ProjectController@index');
-Route::get('{firstPart}/{rest}', 'ProjectController@show')->where('firstPart', '[^/]*')->where('rest', '.*');
+Route::get('{project_directory}/{slug?}', 'ProjectController@show')
+    ->where('project_directory', '[a-z\-0-9]+')
+    ->where('slug', '[a-z\-0-9/]*');
