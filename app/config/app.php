@@ -91,7 +91,6 @@ return array(
         'Illuminate\Cookie\CookieServiceProvider',
         'Illuminate\Database\DatabaseServiceProvider',
         'Illuminate\Encryption\EncryptionServiceProvider',
-        // 'Illuminate\Filesystem\FilesystemServiceProvider',
         'Illuminate\Hashing\HashServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
         'Illuminate\Foundation\Providers\KeyGeneratorServiceProvider',
@@ -158,7 +157,6 @@ return array(
         'DB'          => 'Illuminate\Support\Facades\DB',
         'Eloquent'    => 'Illuminate\Database\Eloquent\Model',
         'Event'       => 'Illuminate\Support\Facades\Event',
-        //File'            => 'Illuminate\Support\Facades\File',
         'Form'        => 'Illuminate\Support\Facades\Form',
         'Hash'        => 'Illuminate\Support\Facades\Hash',
         'HTML'        => 'Illuminate\Support\Facades\HTML',
@@ -184,6 +182,7 @@ return array(
         'Markdown'    => 'VTalbot\Markdown\Facades\Markdown',
         'SSH'         => 'Illuminate\Support\Facades\SSH',
         'File'        => 'Distillerie\Facades\File',
+        'Menu'        => 'Distillerie\Facades\Menu',
     ),
 
 );

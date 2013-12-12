@@ -12,6 +12,7 @@ class DistillerieServiceProvider extends ServiceProvider {
     public function register()
     {
         $this->app['files'] = $this->app->share(function() { return new Libraries\Filesystem\Filesystem; });
+        $this->app['menu'] = $this->app->share(function() { return new Libraries\Menu\Menu; });
     }
 
     /**
@@ -21,7 +22,7 @@ class DistillerieServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-        return array('files');
+        return array('files','menu');
     }
 
 }

@@ -1,4 +1,4 @@
-
+@section('header')
 <div class="navbar-header">
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -10,25 +10,17 @@
 </div>
 <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
     <ul class="nav navbar-nav">
-        <li>
-            <a href="../getting-started">Getting started</a>
+        @foreach($projects as $project)
+        @if($project->selected)
+            <li class="active">
+        @else
+            <li>
+        @endif
+            <a href="/{{ $project->folder}}">{{ $project->name }}</a>
         </li>
-        <li>
-            <a href="../css">CSS</a>
-        </li>
-        <li class="active">
-            <a href="../components">Components</a>
-        </li>
-        <li>
-            <a href="../javascript">JavaScript</a>
-        </li>
-        <li>
-            <a href="../customize">Customize</a>
-        </li>
+        @endforeach
     </ul>
     <ul class="nav navbar-nav navbar-right">
-        <li>
-            <a href="../about">About</a>
-        </li>
     </ul>
 </nav>
+@stop

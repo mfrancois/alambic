@@ -15,12 +15,17 @@
 <div class="container bs-docs-container">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
         <div class="container">
-            @include('header.menu')
+            @yield('header')
         </div>
     </header>
-
-    <div class="row" role="main">
-        @yield('content')
+    @yield('baseline')
+    <div class="row" >
+        <div class="col-md-3">
+            @yield('left')
+        </div>
+        <div class="col-md-9" role="main">
+            @yield('content')
+        </div>
     </div>
 </div>
 {{ HTML::script('js/bootstrap.min.js'); }}

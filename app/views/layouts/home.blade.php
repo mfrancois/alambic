@@ -15,10 +15,10 @@
 <div class="container bs-docs-container">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
         <div class="container">
-            @include('header.menu')
+            @yield('header')
         </div>
     </header>
-    @include('header.baseline')
+    @yield('baseline')
     <div class="row" role="main">
         @yield('content')
     </div>

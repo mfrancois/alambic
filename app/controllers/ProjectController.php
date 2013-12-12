@@ -12,31 +12,12 @@ class ProjectController extends \BaseController
 
     public function index()
     {
-        $directories = File::directories(app_path('markdown'));
+        $directories_data = Menu::top(public_path('markdown'));
 
-        $directories_data = array();
-
-        foreach ($directories as $k => $value) {
-            $config_file = rtrim($value, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . '' . Config::get('project.file_configration');
-
-            if (File::exists($config_file)) {
-                $config = json_decode(File::get($config_file));
-
-                if (!empty($config)) {
-                    $projet = trim(str_replace(app_path('markdown'),'',$value),DIRECTORY_SEPARATOR);
-                    $config->folder = $projet;
-
-                    $image = rtrim($value, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . '' .$config->logo;
-                    if (File::exists($image)) {
-                        $config->image = base64_encode(File::get($image));
-                    }
-                    $directories_data[] = $config;
-                }
-            }
-
-        }
-
-        return View::make('project.liste')->with('projects',$directories_data);
+        return View::make('project.liste')
+            ->with('projects', $directories_data)
+            ->nest('header', 'header.menu', array('projects' => $directories_data))
+            ->nest('baseline', 'header.baseline');
     }
 
     /**
@@ -45,12 +26,27 @@ class ProjectController extends \BaseController
      * @param  int $id
      * @return Response
      */
-    public function show($project_directory, $slug = '')
+    public function show($project_directory, $slug = 'index')
     {
         //
-        var_dump($project_directory);
-        var_dump($slug);
-        exit;
+        $markdorwn = public_path('markdown') . DIRECTORY_SEPARATOR . $project_directory;
+
+        $menu = Menu::build($markdorwn, 0, public_path('markdown'));
+        $html_menu = Menu::generate_html($menu, "/" . $project_directory . "/" . $slug);
+        $directories_data = Menu::top(public_path('markdown'),$project_directory);
+
+        if (File::isFile($markdorwn . DIRECTORY_SEPARATOR . $slug . '.md')) {
+            $md = $project_directory . DIRECTORY_SEPARATOR . $slug;
+        } else {
+            $md = "404";
+        }
+
+        return View::make('project.detail')
+            ->with('content', Markdown::make($md))
+            ->nest('header', 'header.menu', array('projects' => $directories_data))
+            ->nest('left', 'project.menu', array('menu' => $html_menu))
+            ->nest('baseline', 'header.baseline');
+
     }
 
 
