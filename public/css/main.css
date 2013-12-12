@@ -88,6 +88,14 @@
     font-size: 90%;
 }
 
+.bs-sidebar .nav .nav .nav > li > a {
+    padding-left: 50px;
+}
+
+.bs-sidebar .nav .nav .nav .nav > li > a {
+    padding-left: 70px;
+}
+
 /* Show and affix the side nav when space allows it */
 @media (min-width: 992px) {
     .bs-sidebar .nav > .active > ul {
