@@ -1,4 +1,6 @@
-<?php namespace Illuminate\Support\Facades;
+<?php namespace Distillerie\Facades;
+
+use Illuminate\Support\Facades\Facade;
 
 class File extends Facade {
 

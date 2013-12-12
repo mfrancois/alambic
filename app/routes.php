@@ -10,8 +10,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-
 Route::get('/', 'ProjectController@index');
 Route::get('{project_directory}/{slug?}', 'ProjectController@show')
     ->where('project_directory', '[a-z\-0-9]+')
