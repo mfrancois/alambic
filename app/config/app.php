@@ -91,7 +91,7 @@ return array(
         'Illuminate\Cookie\CookieServiceProvider',
         'Illuminate\Database\DatabaseServiceProvider',
         'Illuminate\Encryption\EncryptionServiceProvider',
-       // 'Illuminate\Filesystem\FilesystemServiceProvider',
+        // 'Illuminate\Filesystem\FilesystemServiceProvider',
         'Illuminate\Hashing\HashServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
         'Illuminate\Foundation\Providers\KeyGeneratorServiceProvider',
@@ -114,6 +114,7 @@ return array(
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
+        'Illuminate\Remote\RemoteServiceProvider',
         'VTalbot\Markdown\MarkdownServiceProvider',
 
     ),
@@ -151,7 +152,7 @@ return array(
         'Cache'       => 'Illuminate\Support\Facades\Cache',
         'ClassLoader' => 'Illuminate\Support\ClassLoader',
         'Config'      => 'Illuminate\Support\Facades\Config',
-        'Controller'  => 'Illuminate\Routing\Controllers\Controller',
+        'Controller'  => 'Illuminate\Routing\Controller',
         'Cookie'      => 'Illuminate\Support\Facades\Cookie',
         'Crypt'       => 'Illuminate\Support\Facades\Crypt',
         'DB'          => 'Illuminate\Support\Facades\DB',
@@ -181,7 +182,7 @@ return array(
         'Validator'   => 'Illuminate\Support\Facades\Validator',
         'View'        => 'Illuminate\Support\Facades\View',
         'Markdown'    => 'VTalbot\Markdown\Facades\Markdown',
-
+        'SSH'         => 'Illuminate\Support\Facades\SSH',
         'File'        => 'Distillerie\Facades\File',
     ),
 
