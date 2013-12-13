@@ -1,4 +1,4 @@
-# validUpload test
+# validUpload
 
 ## Description
 validUpload est basé sur plupload et validationEngine et twitter bootsrap.
@@ -28,19 +28,15 @@ Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux j
 
 ### Bower
 
-```sh
     bower install
-```
 
 #### Dépendances
 
-```json
 
     "jquery": "~1.10.2",
     "validationEngine": "~2.6.4",
     "plupload": "~2.0.0",
     "bootstrap": "~3.0.0"
-```
 
 
 
@@ -52,14 +48,11 @@ Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux j
 ![Simple](http://www.kezho.com/application/data/demo/validupload/images/simple.png)
 
 
-```html
     <fieldset>
          <label>Single upload</label>
          <div class="uploader_conteneur"></div>
      </fieldset>
-```
 
-```js
          jQuery(document).ready(function () {
              jQuery('.uploader_conteneur').validUpload({
                  filters: [
@@ -68,7 +61,6 @@ Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux j
                  ]
              });
          });
-```
 
 
 ### Exemple d'utilisation d'upload multiple
@@ -76,14 +68,11 @@ Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux j
 ![Multiple](http://www.kezho.com/application/data/demo/validupload/images/multiple.png)
 
 
-```html
     <fieldset>
         <label>Upload multiple</label>
         <div class="uploader_multiple"></div>
     </fieldset>
-```
 
-```js
          jQuery('.uploader_multiple').validUpload({
              dataUploader: {
                  runtimes: 'html5,flash,html4',
@@ -94,7 +83,6 @@ Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux j
                  unique_names: true
              }
          });
-```
 
 
 ### Exemple d'initialisation de contenu
@@ -102,29 +90,23 @@ Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux j
 
 #### Upload simple
 
-```html
-    <fieldset>
-        <label>Upload simple</label>
-        <div class="uploader_conteneur_defaut"></div>
-    </fieldset>
-```
+        <fieldset>
+            <label>Upload simple</label>
+            <div class="uploader_conteneur_defaut"></div>
+        </fieldset>
 
-```js
          jQuery('.uploader_conteneur_defaut').validUpload({
              default_value:'test.jpg'
          });
-```
 
 #### Upload multiple
 
-```html
-    <fieldset>
-        <label>Upload multiple</label>
-        <div class="uploader_multiple_default"></div>
-    </fieldset>
-```
+        <fieldset>
+            <label>Upload multiple</label>
+            <div class="uploader_multiple_default"></div>
+        </fieldset>
 
-```js
+
          jQuery('.uploader_multiple_default').validUpload({
               dataUploader: {
                   runtimes: 'html5,flash,html4',
@@ -136,7 +118,6 @@ Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux j
               },
               default_value:'test_1.jpg,test_2.png,test_3.tiff'
           });
-```
 
 
 ### Events
@@ -154,11 +135,9 @@ Event | Param | Description
 `onInitDisplay` | Instance de l'objet (this) | Appelé une fois que les éléments sont masqués ou affichés (remove,finished...) en fonction du contenue de l'input.
 `onInitEvent` | Appelé une fois que les évnèments sont initialisés.
 
-
-
 #### Exemple d'implémentation d'évènement
 
-```html
+
     <form class="form-inline" role="form">
         <fieldset>
             <label>Event upload</label>
@@ -170,9 +149,8 @@ Event | Param | Description
 
         </pre>
     </form>
-```
 
-```js
+
     jQuery('.uploader_event').validUpload({
         onFilesAdded: function (up, file) {
             log(' ');
@@ -257,4 +235,53 @@ Event | Param | Description
             log('---------------------------');
         }
     });
-```
+
+
+#### Exemple d'utilisation avec une file d'image
+
+![File](http://www.kezho.com/application/data/demo/validupload/images/file.png)
+
+
+
+     <form class="form-inline" role="form">
+        <fieldset>
+            <label>Upload multiple</label>
+
+            <div class="uploader_multiple_file"></div>
+        </fieldset>
+        <hr/>
+    </form>
+
+    jQuery('.uploader_multiple_file').validUpload({
+        dataUploader: {
+            runtimes: 'html5,flash,html4',
+            url: 'components/plupload/examples/upload.php',
+            flash_swf_url: 'components/plupload/js/Moxie.swf',
+            chunk_size: '1mb',
+            multi_selection: true,
+            unique_names: true,
+            resize: {width: 320, height: 240, quality: 90},
+            filters: [
+                {title: "Images files", extensions: "jpg,jepg,tiff,gif,png,ico"}
+            ]
+        },
+        default_value: 'image1.jpg,image2.jpg',
+        onFileUploaded: function (up, file, info) {
+            if (typeof(file.target_name) != 'undefined') {
+                var tpl = '<img src="http://mon_url/' + file.target_name + '" alt="" />';
+                var $elt = jQuery('#' + file.id).children("div:nth-child(2)");
+                $elt.prepend(tpl);
+            }
+        },
+        onAfterAddOneItem: function (file) {
+            if (typeof(file.target_name) != 'undefined') {
+                var tpl = '<img src="http://mon_url/' + file.target_name + '" alt="" />';
+                var $elt = jQuery('#' + file.id).children("div:nth-child(2)");
+                $elt.prepend(tpl);
+            }
+        }
+    });
+
+License
+-------
+MIT: http://kezho.mit-license.org/

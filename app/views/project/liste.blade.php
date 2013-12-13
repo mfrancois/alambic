@@ -2,11 +2,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-lg-12">
-            <div class="page-header">
-              <h1>@lang('project.liste')</h1>
-            </div>
-    </div>
+    <h1>@lang('project.liste')</h1>
     @foreach($projects as $project)
 
     <div class="col-lg-12">

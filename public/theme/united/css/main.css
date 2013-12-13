@@ -1,0 +1,431 @@
+body {
+    padding-top: 50px
+}
+
+#banner {
+    border-bottom: none
+}
+
+.page-header h1 {
+    font-size: 4em
+}
+
+.bs-docs-section {
+    margin-top: 8em
+}
+
+footer {
+    margin: 5em 0
+}
+
+footer li {
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em
+}
+
+footer p {
+    clear: left;
+    margin-bottom: 0
+}
+
+.splash {
+    background-color: #1c2533;
+    background: -webkit-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: -o-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: -ms-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: -moz-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: linear-gradient(20deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background-attachment: fixed;
+    padding: 6em 0 2em;
+    color: #fff;
+    text-align: center
+}
+
+.splash .alert {
+    margin: 4em 0 2em
+}
+
+.splash h1 {
+    font-size: 4em
+}
+
+.splash #social {
+    margin-top: 6em
+}
+
+.section-tout {
+    padding: 4em 0 3em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #eaf1f1
+}
+
+.section-tout .fa {
+    margin-right: .5em
+}
+
+.section-tout p {
+    margin-bottom: 3em
+}
+
+.section-preview {
+    padding: 4em 0 4em
+}
+
+.section-preview .preview {
+    margin-bottom: 4em;
+    background-color: #eaf1f1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px
+}
+
+.section-preview .preview .image {
+    padding: 5px
+}
+
+.section-preview .preview .image img {
+    border: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.section-preview .preview .options {
+    text-align: center;
+    padding: 0 2em 2em
+}
+
+.section-preview .preview .options p {
+    margin-bottom: 2em
+}
+
+.section-preview .dropdown-menu {
+    text-align: left
+}
+
+.section-preview .lead {
+    margin-bottom: 2em
+}
+
+@media (max-width:767px) {
+    .section-preview .image img {
+        width: 100%
+    }
+}
+
+.bsa .one .bsa_it_ad {
+    border: none !important;
+    background-color: transparent !important
+}
+
+.bsa .one .bsa_it_ad .bsa_it_t, .bsa .one .bsa_it_ad .bsa_it_d {
+    color: inherit !important
+}
+
+.bsa .one .bsa_it_p {
+    display: none
+}
+
+/* First level of nav */
+.bs-sidenav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 0 #fff;
+    background-color: #f7f5fa;
+    border-radius: 5px;
+}
+
+/* All levels of nav */
+.bs-sidebar .nav > li > a {
+    display: block;
+    color: #716b7a;
+    padding: 5px 20px;
+}
+
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #e5e3e9;
+    border-right: 1px solid #dbd8e0;
+}
+
+.bs-sidebar .nav > .active > a,
+.bs-sidebar .nav > .active:hover > a,
+.bs-sidebar .nav > .active:focus > a {
+    font-weight: bold;
+    color: #008cba;
+    background-color: transparent;
+    border-right: 1px solid #008cba;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-sidebar .nav .nav {
+    display: block; /* Hide by default, but at >768px, show it */
+    margin-bottom: 8px;
+}
+
+.bs-sidebar .nav .nav > li > a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    font-size: 90%;
+}
+
+.bs-sidebar .nav .nav .nav > li > a {
+    padding-left: 50px;
+}
+
+.bs-sidebar .nav .nav .nav .nav > li > a {
+    padding-left: 70px;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-sidebar .nav > .active > ul {
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-sidebar.affix-bottom,
+    .bs-sidebar.affix {
+        width: 263px;
+    }
+}
+
+.navbar-nav.navbar-right {
+    margin-top: 10px;
+}
+
+pre {
+    background-color: #E5F9FF;
+    padding: 10px;
+    border: 1px solid #E1E1E8;
+}
+
+
+
+
+table {
+    max-width: 100%;
+    background-color: transparent;
+}
+
+th {
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 21px;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+
+table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dddddd;
+}
+
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+
+table > tbody + tbody {
+    border-top: 2px solid #dddddd;
+}
+
+table table {
+    background-color: #ffffff;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    padding: 5px;
+}
+
+table {
+    border: 1px solid #dddddd;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    border: 1px solid #dddddd;
+}
+
+table > thead > tr > th,
+table > thead > tr > td {
+    border-bottom-width: 2px;
+}
+
+table > tbody > tr:nth-child(odd) > td,
+table > tbody > tr:nth-child(odd) > th {
+    background-color: #f9f9f9;
+}
+
+table > tbody > tr:hover > td,
+table > tbody > tr:hover > th {
+    background-color: #f5f5f5;
+}
+
+table col[class*="col-"] {
+    position: static;
+    display: table-column;
+    float: none;
+}
+
+table td[class*="col-"],
+table th[class*="col-"] {
+    display: table-cell;
+    float: none;
+}
+
+table > thead > tr > .active,
+table > tbody > tr > .active,
+table > tfoot > tr > .active,
+table > thead > .active > td,
+table > tbody > .active > td,
+table > tfoot > .active > td,
+table > thead > .active > th,
+table > tbody > .active > th,
+table > tfoot > .active > th {
+    background-color: #f5f5f5;
+}
+
+table > tbody > tr > .active:hover,
+table > tbody > .active:hover > td,
+table > tbody > .active:hover > th {
+    background-color: #e8e8e8;
+}
+
+table > thead > tr > .success,
+table > tbody > tr > .success,
+table > tfoot > tr > .success,
+table > thead > .success > td,
+table > tbody > .success > td,
+table > tfoot > .success > td,
+table > thead > .success > th,
+table > tbody > .success > th,
+table > tfoot > .success > th {
+    background-color: #dff0d8;
+}
+
+table > tbody > tr > .success:hover,
+table > tbody > .success:hover > td,
+table > tbody > .success:hover > th {
+    background-color: #d0e9c6;
+}
+
+table > thead > tr > .danger,
+table > tbody > tr > .danger,
+table > tfoot > tr > .danger,
+table > thead > .danger > td,
+table > tbody > .danger > td,
+table > tfoot > .danger > td,
+table > thead > .danger > th,
+table > tbody > .danger > th,
+table > tfoot > .danger > th {
+    background-color: #f2dede;
+}
+
+table > tbody > tr > .danger:hover,
+table > tbody > .danger:hover > td,
+table > tbody > .danger:hover > th {
+    background-color: #ebcccc;
+}
+
+table > thead > tr > .warning,
+table > tbody > tr > .warning,
+table > tfoot > tr > .warning,
+table > thead > .warning > td,
+table > tbody > .warning > td,
+table > tfoot > .warning > td,
+table > thead > .warning > th,
+table > tbody > .warning > th,
+table > tfoot > .warning > th {
+    background-color: #fcf8e3;
+}
+
+table > tbody > tr > .warning:hover,
+table > tbody > .warning:hover > td,
+table > tbody > .warning:hover > th {
+    background-color: #faf2cc;
+}
+
+@media (max-width: 767px) {
+    table {
+        width: 100%;
+        margin-bottom: 15.75px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        border: 1px solid #dddddd;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+    }
+    table > table {
+        margin-bottom: 0;
+    }
+    table > table > thead > tr > th,
+    table > table > tbody > tr > th,
+    table > table > tfoot > tr > th,
+    table > table > thead > tr > td,
+    table > table > tbody > tr > td,
+    table > table > tfoot > tr > td {
+        white-space: nowrap;
+    }
+    table > table {
+        border: 0;
+    }
+    table > table > thead > tr > th:first-child,
+    table > table > tbody > tr > th:first-child,
+    table > table > tfoot > tr > th:first-child,
+    table > table > thead > tr > td:first-child,
+    table > table > tbody > tr > td:first-child,
+    table > table > tfoot > tr > td:first-child {
+        border-left: 0;
+    }
+    table > table > thead > tr > th:last-child,
+    table > table > tbody > tr > th:last-child,
+    table > table > tfoot > tr > th:last-child,
+    table > table > thead > tr > td:last-child,
+    table > table > tbody > tr > td:last-child,
+    table > table > tfoot > tr > td:last-child {
+        border-right: 0;
+    }
+    table > table > tbody > tr:last-child > th,
+    table > table > tfoot > tr:last-child > th,
+    table > table > tbody > tr:last-child > td,
+    table > table > tfoot > tr:last-child > td {
+        border-bottom: 0;
+    }
+}
+
+h1 {
+    padding-bottom: 9.5px;
+    margin: 42px 0 21px;
+    border-bottom: 1px solid #dddddd;
+}
