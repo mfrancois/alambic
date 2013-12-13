@@ -13,6 +13,10 @@ return array(
     |
     */
 
-    "readmore" => "Lire la suite",
+    "readmore"    => "Lire la suite",
+    "title"       => 'Documentation',
+    "description" => "",
+    "keyword"     => "",
+    'menu_toogle' => "Toggle navigation"
 
 );
