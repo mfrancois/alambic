@@ -10,21 +10,26 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+      @include('header.meta')
 </head>
 <body>
 <div class="container bs-docs-container">
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
         <div class="container">
-            @yield('header')
+            @include('header.menu')
         </div>
     </header>
-    @yield('baseline')
+    @include('header.baseline')
+
     <div class="row" >
         <div class="col-md-3">
-            @yield('left')
+            @include('project.menu')
         </div>
         <div class="col-md-9" role="main">
+
             @yield('content')
+            @include('comment.discqus')
         </div>
     </div>
 </div>

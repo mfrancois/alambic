@@ -38,7 +38,4 @@ class Filesystem extends \Illuminate\Filesystem\Filesystem{
         return FALSE;
     }
 
-    public function removeExtension($file,$root){
-        return str_replace(".".$this->extension($root.DIRECTORY_SEPARATOR.$file),'',$file);
-    }
 }

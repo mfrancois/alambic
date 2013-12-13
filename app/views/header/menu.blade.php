@@ -1,4 +1,3 @@
-@section('header')
 <div class="navbar-header">
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -20,7 +19,7 @@
         </li>
         @endforeach
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-    </ul>
+    <div class="nav navbar-nav navbar-right">
+        @include('social.sharethis')
+    </div>
 </nav>
-@stop
