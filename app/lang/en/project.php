@@ -17,6 +17,7 @@ return array(
     "title"       => 'Documentation',
     "description" => "",
     "keyword"     => "",
-    'menu_toogle' => "Toggle navigation"
+    'menu_toogle' => "Toggle navigation",
+    'liste'       => "Liste des projets",
 
 );

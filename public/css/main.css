@@ -1,54 +1,134 @@
-
-/*
- * Page headers
- *
- * Jumbotron-esque headers at the top of every page that's not the homepage.
- */
-
-
-/* Page headers */
-.bs-header {
-    padding: 30px 15px 40px; /* side padding builds on .container 15px, so 30px */
-    font-size: 16px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0,0,0,.15);
+body {
+    padding-top: 50px
 }
-.bs-header h1 {
+
+#banner {
+    border-bottom: none
+}
+
+.page-header h1 {
+    font-size: 4em
+}
+
+.bs-docs-section {
+    margin-top: 8em
+}
+
+footer {
+    margin: 5em 0
+}
+
+footer li {
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em
+}
+
+footer p {
+    clear: left;
+    margin-bottom: 0
+}
+
+.splash {
+    background-color: #1c2533;
+    background: -webkit-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: -o-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: -ms-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: -moz-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background: linear-gradient(20deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);
+    background-attachment: fixed;
+    padding: 6em 0 2em;
     color: #fff;
-}
-.bs-header p {
-    font-weight: 300;
-    line-height: 1.5;
-}
-.bs-header .container {
-    position: relative;
+    text-align: center
 }
 
-@media (min-width: 768px) {
-    .bs-header {
-        font-size: 21px;
-        text-align: left;
+.splash .alert {
+    margin: 4em 0 2em
+}
+
+.splash h1 {
+    font-size: 4em
+}
+
+.splash #social {
+    margin-top: 6em
+}
+
+.section-tout {
+    padding: 4em 0 3em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #eaf1f1
+}
+
+.section-tout .fa {
+    margin-right: .5em
+}
+
+.section-tout p {
+    margin-bottom: 3em
+}
+
+.section-preview {
+    padding: 4em 0 4em
+}
+
+.section-preview .preview {
+    margin-bottom: 4em;
+    background-color: #eaf1f1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px
+}
+
+.section-preview .preview .image {
+    padding: 5px
+}
+
+.section-preview .preview .image img {
+    border: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.section-preview .preview .options {
+    text-align: center;
+    padding: 0 2em 2em
+}
+
+.section-preview .preview .options p {
+    margin-bottom: 2em
+}
+
+.section-preview .dropdown-menu {
+    text-align: left
+}
+
+.section-preview .lead {
+    margin-bottom: 2em
+}
+
+@media (max-width:767px) {
+    .section-preview .image img {
+        width: 100%
     }
-    .bs-header h1 {
-        font-size: 60px;
-        line-height: 1;
-    }
 }
 
-@media (min-width: 992px) {
-    .bs-header h1,
-    .bs-header p {
-        margin-right: 380px;
-    }
+.bsa .one .bsa_it_ad {
+    border: none !important;
+    background-color: transparent !important
 }
 
+.bsa .one .bsa_it_ad .bsa_it_t, .bsa .one .bsa_it_ad .bsa_it_d {
+    color: inherit !important
+}
 
+.bsa .one .bsa_it_p {
+    display: none
+}
 
 /* First level of nav */
 .bs-sidenav {
     margin-top: 30px;
     margin-bottom: 30px;
-    padding-top:    10px;
+    padding-top: 10px;
     padding-bottom: 10px;
     text-shadow: 0 1px 0 #fff;
     background-color: #f7f5fa;
@@ -61,19 +141,21 @@
     color: #716b7a;
     padding: 5px 20px;
 }
+
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
     text-decoration: none;
     background-color: #e5e3e9;
     border-right: 1px solid #dbd8e0;
 }
+
 .bs-sidebar .nav > .active > a,
 .bs-sidebar .nav > .active:hover > a,
 .bs-sidebar .nav > .active:focus > a {
     font-weight: bold;
-    color: #563d7c;
+    color: #008cba;
     background-color: transparent;
-    border-right: 1px solid #563d7c;
+    border-right: 1px solid #008cba;
 }
 
 /* Nav: second level (shown on .active) */
@@ -81,8 +163,9 @@
     display: block; /* Hide by default, but at >768px, show it */
     margin-bottom: 8px;
 }
+
 .bs-sidebar .nav .nav > li > a {
-    padding-top:    3px;
+    padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 30px;
     font-size: 90%;
@@ -102,6 +185,7 @@
         display: block;
     }
 }
+
 @media (min-width: 1200px) {
     /* Widen the fixed sidebar again */
     .bs-sidebar.affix-bottom,
@@ -110,7 +194,6 @@
     }
 }
 
-
-.navbar-nav.navbar-right{
+.navbar-nav.navbar-right {
     margin-top: 10px;
 }

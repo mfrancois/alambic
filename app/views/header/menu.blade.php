@@ -1,4 +1,4 @@
-<div class="navbar-header">
+<div class="navbar-header ">
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
         <span class="sr-only">@lang('project.menu_toogle')</span>
         <span class="icon-bar"></span>

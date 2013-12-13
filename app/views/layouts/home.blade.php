@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     {{ HTML::style('css/bootstrap.min.css'); }}
-    {{ HTML::style('css/bootstrap-theme.min.css'); }}
     {{ HTML::style('css/main.css'); }}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

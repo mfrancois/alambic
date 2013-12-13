@@ -2,24 +2,34 @@
 @section('content')
 
 <div class="row">
-
-    @foreach($projects as $project)
-    <div class="col-xs-6 col-md-3">
-        <div class="thumbnail">
-            @if(!empty($project->image))
-            <img src="data:image/jpeg;base64,{{$project->image}}" />
-            @endif
-
-            <div class="caption">
-                <h3>{{ $project->name }}</h3>
-                @foreach($project->keywords as $tag)
-                    <span class="label label-default">{{$tag}}</span>
-                @endforeach
-                <p>{{ $project->description }}</p>
-                <p>
-                    <a href="{{$project->folder}}" class="btn btn-primary" role="button">@lang('project.readmore')</a>
-                </p>
+    <div class="col-lg-12">
+            <div class="page-header">
+              <h1>@lang('project.liste')</h1>
             </div>
+    </div>
+    @foreach($projects as $project)
+
+    <div class="col-lg-12">
+        <div class="page-header">
+         <h2>{{ $project->name }}</h2>
+        </div>
+        <div class="media">
+             @if(!empty($project->image))
+             <a class="pull-left" href="{{$project->folder}}">
+                <img src="data:image/jpeg;base64,{{$project->image}}" />
+              </a>
+            @endif
+          <div class="media-body">
+           <p>{{ $project->description }}</p>
+           <p>
+               @foreach($project->keywords as $tag)
+                   <span class="label label-info">{{$tag}}</span>
+               @endforeach
+           </p>
+           <p class="pull-right">
+           <a  href="{{$project->folder}}" class="btn btn-primary" role="button">@lang('project.readmore')</a>
+           </p>
+          </div>
         </div>
     </div>
     @endforeach
