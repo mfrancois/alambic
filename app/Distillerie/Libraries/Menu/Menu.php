@@ -83,8 +83,7 @@ class Menu
 
         foreach ($menu as $k => $v)
         {
-
-            $active = (strpos($uri, $v['uri']) !== false) ? \Config::get('menu.active_class') : \Config::get('menu.inactive_class');
+            $active = ("/".$uri == $v['uri']) ? \Config::get('menu.active_class') : \Config::get('menu.inactive_class');
             $html .= "<li class='" . $active . "'>";
             $html .= "<a href='" . $v['uri'] . "' >" . $v['name'] . "</a>";
 
@@ -143,7 +142,7 @@ class Menu
                     'dir'      => $k,
                     'name'     => $this->guess_name($k, \Config::get('menu.guess_separator')),
                     'children' => $this->child($v, $directory . '/' . $k, $root),
-                    'uri'      => str_replace($root, '', $directory . '/' . $k)
+                    'uri'      => "/".ltrim(str_replace($root, '', $directory . '/' . $k),DIRECTORY_SEPARATOR)
                 );
 
                 continue;
@@ -165,7 +164,7 @@ class Menu
                 'file'     => $v,
                 'name'     => $this->guess_name($v, \Config::get('menu.guess_separator')),
                 'filepath' => str_replace('/./', '/', $directory . '/' . $v),
-                'uri'      => $uri
+                'uri'      => "/".ltrim($uri,DIRECTORY_SEPARATOR)
             );
         }
         $menu = $this->order_by($menu, $order);

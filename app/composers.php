@@ -9,7 +9,7 @@ View::composer('header.menu', function ($view)
 
 View::composer('header.meta', function ($view)
 {
-    $project = Menu::detail(public_path('markdown').DIRECTORY_SEPARATOR. Request::segment(1));
+    $project = Menu::detail(public_path('markdown') . DIRECTORY_SEPARATOR . Request::segment(1));
     $view->with('project', $project);
 });
 
@@ -18,7 +18,17 @@ View::composer('project.menu', function ($view)
 {
     $markdorwn = public_path('markdown') . DIRECTORY_SEPARATOR . Request::segment(1);
     $menu      = Menu::build($markdorwn, 0, public_path('markdown'));
-    $html_menu = Menu::generate_html($menu, Request::url());
+    $path      = Request::segment(2);
+
+    if ($path == '')
+    {
+        $path = Request::segment(1) . '/index';
+    }
+    else
+    {
+        $path = Request::path();
+    }
+    $html_menu = Menu::generate_html($menu, $path);
 
     $view->with('menu', $html_menu);
 });
