@@ -15,5 +15,5 @@ return array(
     'use_comment'       => true,
     'disqus_shortname'  => 'test123454545454',
     'publisher'         => 'b430fc22-05a9-49c6-b524-64fa4da759f9',
-    'theme'             => 'default'
+    'theme'             => 'yeti'
 );

@@ -13,7 +13,7 @@ class DistillerieServiceProvider extends ServiceProvider {
     {
         $this->app['files'] = $this->app->share(function() { return new Libraries\Filesystem\Filesystem; });
         $this->app['menu'] = $this->app->share(function() { return new Libraries\Menu\Menu; });
-        $this->app['markdownparser'] = $this->app->share(function() { return new Libraries\Markdown\MarkdownParser; });
+        $this->app['markdown'] = $this->app->share(function() { return new Libraries\Markdown\Markdown; });
     }
 
     /**
@@ -23,7 +23,7 @@ class DistillerieServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-        return array('files','menu');
+        return array('files','menu','markdown');
     }
 
 }

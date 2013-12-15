@@ -36,7 +36,7 @@ class ProjectController extends \BaseController
         }
         else
         {
-            $md = "404";
+            App::abort(404);
         }
 
         return View::make('project.detail')

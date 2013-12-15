@@ -114,7 +114,6 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Illuminate\Remote\RemoteServiceProvider',
-        'VTalbot\Markdown\MarkdownServiceProvider',
 
     ),
 
@@ -179,7 +178,7 @@ return array(
         'URL'            => 'Illuminate\Support\Facades\URL',
         'Validator'      => 'Illuminate\Support\Facades\Validator',
         'View'           => 'Illuminate\Support\Facades\View',
-        'Markdown'       => 'VTalbot\Markdown\Facades\Markdown',
+        'Markdown'       => 'Distillerie\Facades\Markdown',
         'SSH'            => 'Illuminate\Support\Facades\SSH',
         'File'           => 'Distillerie\Facades\File',
         'Menu'           => 'Distillerie\Facades\Menu',

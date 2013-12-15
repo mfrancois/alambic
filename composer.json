@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "laravel/framework": "4.1.*",
-        "vtalbot/markdown": "1.*"
+        "dflydev/markdown": "1.0.*"
     },
     "autoload": {
         "classmap": [

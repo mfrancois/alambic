@@ -32,3 +32,9 @@ View::composer('project.menu', function ($view)
 
     $view->with('menu', $html_menu);
 });
+
+
+App::missing(function($exception)
+{
+    return Response::view('errors.missing', array(), 404);
+});

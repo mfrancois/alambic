@@ -95,6 +95,8 @@ class Menu
             $html .= "</li>";
         }
 
+        $html .= "</ul>";
+
         return $html;
     }
 
@@ -167,6 +169,7 @@ class Menu
                 'uri'      => "/".ltrim($uri,DIRECTORY_SEPARATOR)
             );
         }
+
         $menu = $this->order_by($menu, $order);
 
         return $menu;

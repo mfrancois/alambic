@@ -1,0 +1,6 @@
+{
+    "name": "Présentation de l'outil",
+    "description": "Outil de création de site internet, sans base de données.<br />Uniquement basé sur l'utilisation de fichiers markdown.",
+    "keywords": ["markdown", "laravel","bootstrap"],
+    "logo": "_images/logo.png"
+}

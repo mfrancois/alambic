@@ -24,5 +24,7 @@
     </div>
 </div>
 {{ HTML::script('theme/'.Config::get('project.theme').'/js/bootstrap.min.js'); }}
+{{ HTML::script('theme/'.Config::get('project.theme').'/js/prettify.js'); }}
+{{ HTML::script('theme/'.Config::get('project.theme').'/js/main.js'); }}
 </body>
 </html>
