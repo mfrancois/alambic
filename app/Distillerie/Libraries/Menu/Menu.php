@@ -29,7 +29,7 @@ class Menu
         return $config;
     }
 
-    public function top($path, $project_selected = '')
+    public function top($path, $project_selected = '', $tag = '')
     {
 
         $directories      = \File::directories($path);
@@ -45,6 +45,13 @@ class Menu
 
                 if (!empty($config))
                 {
+                    if (!empty($tag) && !empty($config->keywords))
+                    {
+                        if (!in_array($tag, $config->keywords))
+                        {
+                            continue;
+                        }
+                    }
                     $projet           = trim(str_replace(public_path('markdown'), '', $value), DIRECTORY_SEPARATOR);
                     $config->folder   = $projet;
                     $config->selected = ($projet == $project_selected) ? true : false;
@@ -83,7 +90,7 @@ class Menu
 
         foreach ($menu as $k => $v)
         {
-            $active = ("/".$uri == $v['uri']) ? \Config::get('menu.active_class') : \Config::get('menu.inactive_class');
+            $active = ("/" . $uri == $v['uri']) ? \Config::get('menu.active_class') : \Config::get('menu.inactive_class');
             $html .= "<li class='" . $active . "'>";
             $html .= "<a href='" . $v['uri'] . "' >" . $v['name'] . "</a>";
 
@@ -144,7 +151,7 @@ class Menu
                     'dir'      => $k,
                     'name'     => $this->guess_name($k, \Config::get('menu.guess_separator')),
                     'children' => $this->child($v, $directory . '/' . $k, $root),
-                    'uri'      => "/".ltrim(str_replace($root, '', $directory . '/' . $k),DIRECTORY_SEPARATOR)
+                    'uri'      => "/" . ltrim(str_replace($root, '', $directory . '/' . $k), DIRECTORY_SEPARATOR)
                 );
 
                 continue;
@@ -166,7 +173,7 @@ class Menu
                 'file'     => $v,
                 'name'     => $this->guess_name($v, \Config::get('menu.guess_separator')),
                 'filepath' => str_replace('/./', '/', $directory . '/' . $v),
-                'uri'      => "/".ltrim($uri,DIRECTORY_SEPARATOR)
+                'uri'      => "/" . ltrim($uri, DIRECTORY_SEPARATOR)
             );
         }
 

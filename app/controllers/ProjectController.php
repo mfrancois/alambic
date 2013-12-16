@@ -10,21 +10,17 @@ class ProjectController extends \BaseController
      * @return Response
      */
 
-    public function index()
+    public function index($tags = '')
     {
-        $directories_data = Menu::top(public_path('markdown'));
+        $directories_data = Menu::top(public_path('markdown'), '', $tags);
+        $colors_possible  = Config::get('project.color_of_tags');
 
         return View::make('project.liste')
+            ->with('colors_possible', $colors_possible)
             ->with('projects', $directories_data);
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
     public function show($project_directory, $slug = 'index')
     {
         //
