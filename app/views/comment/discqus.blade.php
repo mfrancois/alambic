@@ -1,4 +1,5 @@
 @if(Config::get('project.use_comment'))
+<div class="page-header"></div>
 <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

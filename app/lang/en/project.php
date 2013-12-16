@@ -20,6 +20,7 @@ return array(
     'menu_toogle'       => "Toggle navigation",
     'liste'             => "Liste des projets",
     'title_no_result'   => "Pas de résultat",
-    'content_no_result' => "Pas de résultat pour le tag demandé."
+    'content_no_result' => "Pas de résultat pour le tag demandé.",
+    'menu_group'        => "Projets"
 
 );

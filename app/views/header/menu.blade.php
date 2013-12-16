@@ -9,16 +9,40 @@
 </div>
 <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
     <ul class="nav navbar-nav">
-        @foreach($projects as $project)
-        @if($project->selected)
-            <li class="active">
+        @if(count($projects) > Config::get('project.max_item_in_menu_top'))
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              @lang('project.menu_group') <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                @foreach($projects as $project)
+                    @if($project->selected)
+                        <li class="active">
+                    @else
+                        <li>
+                    @endif
+                        <a href="/{{ $project->folder}}">{{ $project->name }}</a>
+                    </li>
+                @endforeach
+            </ul>
+          </li>
+
         @else
-            <li>
+            @foreach($projects as $project)
+                @if($project->selected)
+                    <li class="active">
+                @else
+                    <li>
+                @endif
+                    <a href="/{{ $project->folder}}">{{ $project->name }}</a>
+                </li>
+            @endforeach
         @endif
-            <a href="/{{ $project->folder}}">{{ $project->name }}</a>
-        </li>
-        @endforeach
+
     </ul>
+
+
+
     <div class="nav navbar-nav navbar-right">
         @include('social.sharethis')
     </div>
