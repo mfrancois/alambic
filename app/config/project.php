@@ -10,6 +10,7 @@
 
 
 return array(
+    'template'          => 'default',
     'file_configration' => 'configuration.json',
     'use_social'        => true,
     'use_comment'       => true,
@@ -17,8 +18,8 @@ return array(
     'publisher'         => 'b430fc22-05a9-49c6-b524-64fa4da759f9',
     'theme'             => 'yeti',
     'color_of_tags'     => array(
-        'bootstrap'=>'success',
-        'laravel'=>'danger',
-        'markdown'=>'info',
+        'bootstrap' => 'success',
+        'laravel'   => 'danger',
+        'markdown'  => 'info',
     )
 );
