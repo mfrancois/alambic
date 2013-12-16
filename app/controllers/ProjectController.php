@@ -40,4 +40,23 @@ class ProjectController extends \BaseController
 
     }
 
+    public function sitemap()
+    {
+        $sitemap = App::make("sitemap");
+
+        $directories_data = Menu::top(public_path('markdown'), '');
+
+        foreach($directories_data as $k=>$v){
+            $markdorwn = public_path('markdown') . DIRECTORY_SEPARATOR . $v->folder;
+            $menu      = Menu::sitemap($markdorwn, 0, public_path('markdown'));
+
+            foreach($menu as $k=>$v){
+                $sitemap->add(URL::to($v), date('Y-m-d'), '0.9', 'monthly');
+            }
+        }
+
+
+        return $sitemap->render('xml');
+    }
+
 }

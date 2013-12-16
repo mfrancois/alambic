@@ -81,6 +81,15 @@ class Menu
 
     }
 
+    public function sitemap($directory, $depth = 0, $root = '')
+    {
+        $map  = \File::directory_map($directory, $depth);
+        $map  = $this->remove_unwanted($map);
+        $menu = !empty($map) ? $this->sitemap_child($map, $directory, $root) : array();
+
+        return $menu;
+    }
+
     public function generate_html($menu, $uri = '', $depth = 0)
     {
 
@@ -179,6 +188,28 @@ class Menu
 
         $menu = $this->order_by($menu, $order);
 
+        return $menu;
+
+    }
+
+    public function  sitemap_child($map, $directory, $root)
+    {
+        $order = array();
+        $menu  = array();
+        foreach ($map as $k => $v)
+        {
+
+            if (is_string($k))
+            {
+                $menu[] = "/" . ltrim(str_replace($root, '', $directory . '/' . $k), DIRECTORY_SEPARATOR);
+                $menu   = array_merge($menu, $this->sitemap_child($v, $directory . '/' . $k, $root));
+                continue;
+            }
+
+            $removed = $this->remove_extension($v);
+            $uri     = str_replace($root, '', $directory . '/' . $removed);
+            $menu[]  = "/" . ltrim($uri, DIRECTORY_SEPARATOR);
+        }
         return $menu;
 
     }
