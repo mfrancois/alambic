@@ -12,17 +12,37 @@ class ProjectController extends \BaseController
 
     public function index($tags = '')
     {
+
         $directories_data = Menu::top(public_path('markdown'), '', $tags);
         $colors_possible  = Config::get('project.color_of_tags');
-
         return View::make('project.liste')
             ->with('colors_possible', $colors_possible)
             ->with('projects', $directories_data);
 
     }
 
-    public function show($project_directory, $slug = 'index')
+    public function print_project($project_directory)
     {
+
+        $path = public_path('markdown') . DIRECTORY_SEPARATOR . $project_directory;
+        if (!File::isDirectory($path))
+        {
+            App::abort(404);
+        }
+
+
+        $markdorwn = public_path('markdown') . DIRECTORY_SEPARATOR . $project_directory;
+        $menu      = Menu::build($markdorwn, 0, public_path('markdown'));
+
+        return View::make('project.print')
+            ->with('content', Markdown::all($menu));
+    }
+
+    public function show($project_directory, $slug = '')
+    {
+        if(empty($slug)){
+            $slug = Config::get('project.default_file_in_folder');
+        }
         //
         $markdorwn = public_path('markdown') . DIRECTORY_SEPARATOR . $project_directory;
 
@@ -46,11 +66,13 @@ class ProjectController extends \BaseController
 
         $directories_data = Menu::top(public_path('markdown'), '');
 
-        foreach($directories_data as $k=>$v){
+        foreach ($directories_data as $k => $v)
+        {
             $markdorwn = public_path('markdown') . DIRECTORY_SEPARATOR . $v->folder;
             $menu      = Menu::sitemap($markdorwn, 0, public_path('markdown'));
 
-            foreach($menu as $k=>$v){
+            foreach ($menu as $k => $v)
+            {
                 $sitemap->add(URL::to($v), date('Y-m-d'), '0.9', 'monthly');
             }
         }

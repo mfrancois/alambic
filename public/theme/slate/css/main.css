@@ -67,7 +67,7 @@ body {
     }
 }
 
-.navbar-nav.navbar-right {
+.navbar-nav .paddingtop_social {
     margin-top: 10px;
 }
 

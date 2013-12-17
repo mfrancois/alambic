@@ -43,7 +43,8 @@
 
 
 
-    <div class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
+        @include('header.menu_actions')
         @include('social.sharethis')
-    </div>
+    </ul>
 </nav>
