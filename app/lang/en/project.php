@@ -23,6 +23,7 @@ return array(
     'content_no_result' => "Pas de résultat pour le tag demandé.",
     'menu_group'        => "Projets",
     'actions'           => 'Actions',
-    'print'             => 'Vue impression'
+    'print'             => 'Vue impression',
+    'search'             => 'Rechercher'
 
 );

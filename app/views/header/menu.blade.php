@@ -40,8 +40,9 @@
         @endif
 
     </ul>
-
-
+    {{ Form::open(array('route' => array('search'),'class'=>'navbar-form navbar-left', 'method' => 'GET')) }}
+        {{ Form::text('s',Input::get('s'),array('placeholder'=>Lang::get('project.search'),'class'=>'form-control col-lg-8')) }}
+    {{ Form::close() }}
 
     <ul class="nav navbar-nav navbar-right">
         @include('header.menu_actions')

@@ -81,4 +81,28 @@ class ProjectController extends \BaseController
         return $sitemap->render('xml');
     }
 
+    public function search(){
+        $seach = Input::get('s');
+
+        $googlesearch = App::make("googlesearch");
+        $results = $googlesearch->build($seach);
+
+        if(!empty($results)){
+
+            foreach($results as $k=>$v){
+                $results[$k] = (object)array(
+                    'image'=>'',
+                    'folder'=>$v->url,
+                    'name'=>$v->title,
+                    'description'=>$v->content,
+                    'keywords'=>array()
+                );
+            }
+        }
+
+        return View::make('project.search')
+                ->with('results', $results);
+
+    }
+
 }

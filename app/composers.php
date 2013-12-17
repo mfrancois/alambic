@@ -3,7 +3,9 @@
 View::composer('header.menu', function ($view)
 {
     $uri = Request::segment(1);
-    if ($uri != null)
+    $name = Route::currentRouteName();
+
+    if ($uri != null && $name != 'search' )
     {
         $projects         = Menu::top(public_path('markdown'), Request::segment(1));
         $selected_project = false;
@@ -30,7 +32,9 @@ View::composer('header.menu', function ($view)
 View::composer('header.meta', function ($view)
 {
     $uri = Request::segment(1);
-    if ($uri != null)
+    $name = Route::currentRouteName();
+
+    if ($uri != null && $name != 'search' )
     {
         $project = Menu::detail(public_path('markdown') . DIRECTORY_SEPARATOR . Request::segment(1));
     }
@@ -45,6 +49,7 @@ View::composer('header.meta', function ($view)
 
 View::composer('project.menu', function ($view)
 {
+
     $markdorwn = public_path('markdown') . DIRECTORY_SEPARATOR . Request::segment(1);
     $menu      = Menu::build($markdorwn, 0, public_path('markdown'));
     $path      = Request::segment(2);
