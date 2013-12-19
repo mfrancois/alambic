@@ -117,17 +117,23 @@ Vous pouvez créer votre propre thème. Pour ce faire créez un répertoire dans
 Dans ce dernier vous pourrez changer ou ajouter tous les styles que vous voulez.
 Parté du theme default pour avoir l'intégralité des fichiérs incluts dans le projet.
 
+#### Exemple thème yetti
+
+![liste](/markdown/start/_images/readme/liste_proj.png)
+
+#### Exemple thème journal
+![liste](/markdown/start/_images/readme/theme.png)
 
 ### Configuration du layout de homepage
 
 Il est possible de modifier la variable `template` pour y associé un nouveau layout pour le rendu liste (`default` ou `grid`).
 
 #### Layout en liste
-@todo image
+![liste](/markdown/start/_images/readme/liste_proj.png)
 
 #### Layout en grille
 
-@todo image
+![grille](/markdown/start/_images/readme/grid.png)
 
 
 ### Titre
@@ -204,6 +210,8 @@ Cléf | Description
 
 #### Gestion du menu
 
+![menu non ordonnée](/markdown/start/_images/readme/menu_no_order.png)
+
 Créez un fichier `index.md` puis un répertoir `folder1` et dedans un fichier `file.md`.
 Vous devriez voir un menu comme cella :
 @todo menu
@@ -228,7 +236,7 @@ Ajouter un fichier `order.txt` dans le répertoire `folder1` :
 
 Vous devriez voir un menu ordonné.
 
-@todo image
+![menu ordonnée](/markdown/start/_images/readme/menu_order.png)
 
 
 
