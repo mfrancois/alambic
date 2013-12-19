@@ -173,6 +173,7 @@ class Menu
             if ($v == Config::get('menu.order_file'))
             {
                 $order = $this->parseorder($directory . '/' . $v);
+
                 continue;
             }
 
@@ -233,17 +234,7 @@ class Menu
 
             foreach ($menu as $k => $item)
             {
-                // Index
-                if (isset($item['file']) && File::removeExtension($item['file']) == 'index')
-                {
 
-                    $indexItem = $item;
-                    unset($menu[$k]);
-                    continue;
-
-                }
-
-                // File ?
                 if (isset($item['file']) && File::removeExtension($item['file']) == $file)
                 {
                     $item['name']   = $name;
@@ -252,7 +243,6 @@ class Menu
                     continue;
                 }
 
-                // Dir
                 if (isset($item['dir']) && File::removeExtension($item['dir']) == $file)
                 {
                     $item['name']   = $name;
