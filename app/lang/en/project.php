@@ -24,6 +24,7 @@ return array(
     'menu_group'        => "Projets",
     'actions'           => 'Actions',
     'print'             => 'Vue impression',
-    'search'            => 'Rechercher'
+    'search'            => 'Rechercher',
+    'filter'            => 'Filtre par tag : '
 
 );
