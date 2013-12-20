@@ -68,6 +68,18 @@ View::composer('project.menu', function ($view)
 });
 
 
+
+
+View::composer('footer.analytics', function ($view)
+{
+    $value = Request::server('HTTP_HOST');
+    $view->with('host', $value);
+});
+
+
+
+
+
 App::missing(function ($exception)
 {
     return Response::view('errors.missing', array(), 404);

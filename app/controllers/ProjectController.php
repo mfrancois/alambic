@@ -17,11 +17,12 @@ class ProjectController extends \BaseController
         $colors_possible  = Config::get('project.color_of_tags');
         return View::make('project.liste')
             ->with('colors_possible', $colors_possible)
+            ->with('tags', $tags)
             ->with('projects', $directories_data);
 
     }
 
-    public function print_project($project_directory)
+    public function printProject($project_directory)
     {
 
         $path = public_path('markdown') . DIRECTORY_SEPARATOR . $project_directory;
