@@ -19,7 +19,7 @@ Dans un premier temps récupérez le projet, faites un checkout avec le nom que 
 
 ```sh
 
-    git@github.com:mfrancois/laravel-markdown-documentation.git projet_test
+    git@github.com:mfrancois/alambic.git projet_test
 
 ```
 
