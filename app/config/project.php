@@ -12,10 +12,10 @@
 return array(
     'template'               => 'default',
     'file_configration'      => 'configuration.json',
-    'use_social'             => true,
-    'use_comment'            => true,
-    'disqus_shortname'       => 'test123454545454',
-    'publisher'              => 'b430fc22-05a9-49c6-b524-64fa4da759f9',
+    'use_social'             => false,
+    'use_comment'            => false,
+    'disqus_shortname'       => '',
+    'publisher'              => '',
     'theme'                  => 'yeti',
     'color_of_tags'          => array(
         'bootstrap' => 'success',
