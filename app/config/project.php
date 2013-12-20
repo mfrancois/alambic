@@ -14,6 +14,8 @@ return array(
     'file_configration'      => 'configuration.json',
     'use_social'             => false,
     'use_comment'            => false,
+    'use_analytics'          => true,
+    'analytics_uid'          => 'UA-35954315-3',
     'disqus_shortname'       => '',
     'publisher'              => '',
     'theme'                  => 'yeti',

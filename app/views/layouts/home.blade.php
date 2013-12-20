@@ -20,11 +20,14 @@
     </header>
     @include('header.baseline')
     <div class="row" role="main">
+    
         @yield('content')
     </div>
 </div>
 {{ HTML::script('theme/'.Config::get('project.theme').'/js/bootstrap.min.js'); }}
 {{ HTML::script('theme/'.Config::get('project.theme').'/js/prettify.js'); }}
 {{ HTML::script('theme/'.Config::get('project.theme').'/js/main.js'); }}
+
+@include('footer.analytics')
 </body>
 </html>
