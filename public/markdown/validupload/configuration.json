@@ -1,6 +1,0 @@
-{
-    "name": "Projet validUpload",
-    "description": "validUpload est basé sur plupload et validationEngine et twitter bootsrap.<br /> Ce dernier est fait pour faciliter l'utilisation et la réutilisation des deux javascript.",
-    "keywords": ["jquery", "plupload","bootstrap"],
-    "logo": "_images/logo.jpg"
-}

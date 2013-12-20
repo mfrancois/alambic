@@ -9,6 +9,8 @@ Pour l'utiliser rien de plus simple il vous suffit de crée vos projets dans le 
 
 ## Demo
 
+Vous pourrez retrouver la documentation du projet alambic sur le site de la [distilleri.es](http://distilleri.es/alambic).
+
 
 
 ## Installation
@@ -74,7 +76,7 @@ Imaginons que je veuille configurer mon projet avec en domaine `doc.alambic.dev`
 
 Si tous c'est bien passé vous devriez voir une page s'afficher lorsque vous allez sur le domaine configuré.
 
-@todo image
+![liste](http://distilleri.es/markdown/alambic/_images/liste_proj.png)
 
 
 ## Options
@@ -119,24 +121,24 @@ Parté du theme default pour avoir l'intégralité des fichiérs incluts dans le
 
 #### Exemple thème yetti
 
-![liste](/markdown/start/_images/readme/liste_proj.png)
+![liste](http://distilleri.es/markdown/alambic/_images/readmeliste_proj.png)
 
 #### Exemple thème journal
-![liste](/markdown/start/_images/readme/theme.png)
+![liste](http://distilleri.es/markdown/alambic/_images/readmetheme.png)
 
 ### Configuration du layout de homepage
 
 Il est possible de modifier la variable `template` pour y associé un nouveau layout pour le rendu liste (`default` ou `grid`).
 
 #### Layout en liste
-![liste](/markdown/start/_images/readme/liste_proj.png)
+![liste](http://distilleri.es/markdown/alambic/_images/readmeliste_proj.png)
 
 #### Layout en grille
 
-![grille](/markdown/start/_images/readme/grid.png)
+![grille](http://distilleri.es/markdown/alambic/_images/readmegrid.png)
 
 
-### Titre
+### Internationalisation
 Pour configurer le titre de l'application et les diférentes chaines, il suffit que vous alliez dans le fichier `/app/lang/en/project.php`.
 
 ```php
@@ -206,15 +208,15 @@ Cléf | Description
 `logo` | Logo affiché
 
 
-@todo image
+![tree](http://distilleri.es/markdown/alambic/_images/readmetree.jpg)
 
 #### Gestion du menu
 
-![menu non ordonnée](/markdown/start/_images/readme/menu_no_order.png)
-
 Créez un fichier `index.md` puis un répertoir `folder1` et dedans un fichier `file.md`.
 Vous devriez voir un menu comme cella :
-@todo menu
+
+![menu non ordonnée](http://distilleri.es/markdown/alambic/_images/readmemenu_no_order.png)
+
 
 
 Ajouter un fichier `order.txt` à la racine qui contient :
@@ -226,7 +228,7 @@ Ajouter un fichier `order.txt` à la racine qui contient :
 
 ```
 
-Ajouter un fichier `order.txt` dans le répertoire `folder1` :
+Ajouter un fichier `order.txt` dans le répertoir `folder1` :
 
 ```
 
@@ -236,7 +238,7 @@ Ajouter un fichier `order.txt` dans le répertoire `folder1` :
 
 Vous devriez voir un menu ordonné.
 
-![menu ordonnée](/markdown/start/_images/readme/menu_order.png)
+![menu ordonnée](http://distilleri.es/markdown/alambic/_images/readmemenu_order.png)
 
 
 

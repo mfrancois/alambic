@@ -14,7 +14,7 @@ return array(
     */
 
     "readmore"          => "Lire la suite",
-    "title"             => 'Documentation',
+    "title"             => 'Alambic',
     "description"       => "",
     "keyword"           => "",
     'menu_toogle'       => "Toggle navigation",
@@ -24,6 +24,6 @@ return array(
     'menu_group'        => "Projets",
     'actions'           => 'Actions',
     'print'             => 'Vue impression',
-    'search'             => 'Rechercher'
+    'search'            => 'Rechercher'
 
 );
