@@ -1,6 +1,6 @@
 # Présentation
 
-## Alambic [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/alambic.png)](http://badges.enytc.com/for/gh/mfrancois/laravel-markdown-documentation)
+## Alambic [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/alambic.png)](http://badges.enytc.com/for/gh/mfrancois/alambic)
 
 Alambic est un outis de création de site sans base de données ni administrations.
 Basé sur laravel, et des thèmes bootstrap 3, vous pourrez créer différents sites.

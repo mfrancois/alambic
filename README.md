@@ -1,4 +1,4 @@
-Alambic [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/alambic.png)](http://badges.enytc.com/for/gh/mfrancois/laravel-markdown-documentation)
+Alambic [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/alambic.png)](http://badges.enytc.com/for/gh/mfrancois/alambic)
 ==============================
 
 ## Description
