@@ -76,7 +76,7 @@ Imaginons que je veuille configurer mon projet avec en domaine `doc.alambic.dev`
 
 Si tous c'est bien passé vous devriez voir une page s'afficher lorsque vous allez sur le domaine configuré.
 
-![liste](http://distilleri.es/markdown/alambic/_images/liste_proj.png)
+![liste](http://distilleri.es/markdown/alambic/_images/readme/liste_proj.png)
 
 
 ## Options
@@ -121,21 +121,21 @@ Parté du theme default pour avoir l'intégralité des fichiérs incluts dans le
 
 #### Exemple thème yetti
 
-![liste](http://distilleri.es/markdown/alambic/_images/readmeliste_proj.png)
+![liste](http://distilleri.es/markdown/alambic/_images/readme/liste_proj.png)
 
 #### Exemple thème journal
-![liste](http://distilleri.es/markdown/alambic/_images/readmetheme.png)
+![liste](http://distilleri.es/markdown/alambic/_images/readme/theme.png)
 
 ### Configuration du layout de homepage
 
 Il est possible de modifier la variable `template` pour y associé un nouveau layout pour le rendu liste (`default` ou `grid`).
 
 #### Layout en liste
-![liste](http://distilleri.es/markdown/alambic/_images/readmeliste_proj.png)
+![liste](http://distilleri.es/markdown/alambic/_images/readme/liste_proj.png)
 
 #### Layout en grille
 
-![grille](http://distilleri.es/markdown/alambic/_images/readmegrid.png)
+![grille](http://distilleri.es/markdown/alambic/_images/readme/grid.png)
 
 
 ### Internationalisation
@@ -208,14 +208,14 @@ Cléf | Description
 `logo` | Logo affiché
 
 
-![tree](http://distilleri.es/markdown/alambic/_images/readmetree.jpg)
+![tree](http://distilleri.es/markdown/alambic/_images/readme/tree.jpg)
 
 #### Gestion du menu
 
 Créez un fichier `index.md` puis un répertoir `folder1` et dedans un fichier `file.md`.
 Vous devriez voir un menu comme cella :
 
-![menu non ordonnée](http://distilleri.es/markdown/alambic/_images/readmemenu_no_order.png)
+![menu non ordonnée](http://distilleri.es/markdown/alambic/_images/readme/menu_no_order.png)
 
 
 
@@ -238,7 +238,7 @@ Ajouter un fichier `order.txt` dans le répertoir `folder1` :
 
 Vous devriez voir un menu ordonné.
 
-![menu ordonnée](http://distilleri.es/markdown/alambic/_images/readmemenu_order.png)
+![menu ordonnée](http://distilleri.es/markdown/alambic/_images/readme/menu_order.png)
 
 
 
