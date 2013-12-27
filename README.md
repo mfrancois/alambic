@@ -95,6 +95,8 @@ Cléf | Description | Valeurs
 `max_item_in_menu_top` | Nombres de projets à afficher dans le menu haut avant qu'ils se regroupe en dropdown menu | 5
 `default_file_in_folder` | Fichier chargé par défaut lors de l'accés à un répertoir | `index`
 `color_of_tags` | Tableau des class pour les tags | `array('bootstrap' => 'success')`
+`use_analytics` | Activation de l'utilisation de google analytics | `false` ou `true`
+`analytics_uid` | Tag analytics pour identifier le site | `UA-*****`
 
 
 ### Choix du thème
