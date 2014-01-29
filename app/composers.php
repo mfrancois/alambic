@@ -79,7 +79,7 @@ View::composer('project.menu', function ($view)
     {
         $path = Request::path();
     }
-    $html_menu = Menu::generate_html($menu, $path);
+    $html_menu = Menu::generateHtml($menu, $path);
 
     $view->with('menu', $html_menu);
 });

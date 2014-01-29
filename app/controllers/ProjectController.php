@@ -50,6 +50,8 @@ class ProjectController extends \BaseController
         if (File::isFile($markdorwn . DIRECTORY_SEPARATOR . $slug . '.md'))
         {
             $md = $project_directory . DIRECTORY_SEPARATOR . $slug;
+        }else if(File::isFile($markdorwn . DIRECTORY_SEPARATOR . $slug .DIRECTORY_SEPARATOR.Config::get('project.default_file_in_folder').'.md')){
+            $md = $project_directory . DIRECTORY_SEPARATOR . $slug.DIRECTORY_SEPARATOR.Config::get('project.default_file_in_folder');
         }
         else
         {

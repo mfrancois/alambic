@@ -5,7 +5,7 @@
 class Filesystem extends \Illuminate\Filesystem\Filesystem{
 
 
-    public function directory_map($source_dir, $directory_depth = 0, $hidden = FALSE)
+    public function directoryMap($source_dir, $directory_depth = 0, $hidden = FALSE)
     {
         if ($fp = @opendir($source_dir))
         {
@@ -23,7 +23,7 @@ class Filesystem extends \Illuminate\Filesystem\Filesystem{
 
                 if (($directory_depth < 1 OR $new_depth > 0) && @is_dir($source_dir.$file))
                 {
-                    $filedata[$file] = $this->directory_map($source_dir.$file.DIRECTORY_SEPARATOR, $new_depth, $hidden);
+                    $filedata[$file] = $this->directoryMap($source_dir.$file.DIRECTORY_SEPARATOR, $new_depth, $hidden);
                 }
                 else
                 {

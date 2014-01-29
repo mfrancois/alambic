@@ -75,8 +75,8 @@ class Menu
     public function build($directory, $depth = 0, $root = '')
     {
 
-        $map  = File::directory_map($directory, $depth);
-        $map  = $this->remove_unwanted($map);
+        $map  = File::directoryMap($directory, $depth);
+        $map  = $this->removeUnwanted($map);
         $menu = !empty($map) ? $this->child($map, $directory, $root) : array();
 
         return $menu;
@@ -85,14 +85,14 @@ class Menu
 
     public function sitemap($directory, $depth = 0, $root = '')
     {
-        $map  = File::directory_map($directory, $depth);
-        $map  = $this->remove_unwanted($map);
-        $menu = !empty($map) ? $this->sitemap_child($map, $directory, $root) : array();
+        $map  = File::directoryMap($directory, $depth);
+        $map  = $this->removeUnwanted($map);
+        $menu = !empty($map) ? $this->sitemapChild($map, $directory, $root) : array();
 
         return $menu;
     }
 
-    public function generate_html($menu, $uri = '', $depth = 0)
+    public function generateHtml($menu, $uri = '', $depth = 0)
     {
 
         $class = ($depth == 0) ? Config::get('menu.classes_first_depth') : '';
@@ -107,7 +107,7 @@ class Menu
 
             if (!empty($v['children']))
             {
-                $html .= $this->generate_html($v['children'], $uri, ($depth + 1));
+                $html .= $this->generateHtml($v['children'], $uri, ($depth + 1));
             }
 
             $html .= "</li>";
@@ -119,7 +119,7 @@ class Menu
     }
 
 
-    public function remove_unwanted($map)
+    public function removeUnwanted($map)
     {
         $folders = Config::get('menu.exclude_folder');
         $files   = Config::get('menu.exclude_file');
@@ -160,9 +160,9 @@ class Menu
             {
                 $menu[] = array(
                     'dir'      => $k,
-                    'name'     => $this->guess_name($k, Config::get('menu.guess_separator')),
+                    'name'     => $this->guessName($k, Config::get('menu.guess_separator')),
                     'children' => $this->child($v, $directory . '/' . $k, $root),
-                    'dirpath' => str_replace('/./', '/', $directory . '/' . $k.'/'),
+                    'dirpath'  => str_replace('/./', '/', $directory . '/' . $k . '/'),
                     'uri'      => "/" . ltrim(str_replace($root, '', $directory . '/' . $k), DIRECTORY_SEPARATOR)
                 );
 
@@ -184,21 +184,20 @@ class Menu
 
             $menu[] = array(
                 'file'     => $v,
-                'name'     => $this->guess_name($v,Config::get('menu.guess_separator')),
+                'name'     => $this->guessName($v, Config::get('menu.guess_separator')),
                 'filepath' => str_replace('/./', '/', $directory . '/' . $v),
                 'uri'      => "/" . ltrim($uri, DIRECTORY_SEPARATOR)
             );
         }
 
-        $menu = $this->order_by($menu, $order);
+        $menu = $this->orderBy($menu, $order);
 
         return $menu;
 
     }
 
-    public function  sitemap_child($map, $directory, $root)
+    public function  sitemapChild($map, $directory, $root)
     {
-        $order = array();
         $menu  = array();
         foreach ($map as $k => $v)
         {
@@ -206,7 +205,7 @@ class Menu
             if (is_string($k))
             {
                 $menu[] = "/" . ltrim(str_replace($root, '', $directory . '/' . $k), DIRECTORY_SEPARATOR);
-                $menu   = array_merge($menu, $this->sitemap_child($v, $directory . '/' . $k, $root));
+                $menu   = array_merge($menu, $this->sitemapChild($v, $directory . '/' . $k, $root));
                 continue;
             }
 
@@ -219,21 +218,45 @@ class Menu
     }
 
 
-    public function order_by($menu, $order)
+    public function orderBy($menu, $order)
     {
         if (empty($order))
         {
+
+            foreach ($menu as $k => $item)
+            {
+                $file_name_without_extension = isset($item['file']) ? File::removeExtension($item['file']) : '';
+
+                if (!empty($file_name_without_extension) && $file_name_without_extension == Config::get('project.default_file_in_folder'))
+                {
+                    unset($menu[$k]);
+                    continue;
+                }
+
+            }
+
             return $menu;
         }
 
         $ordered_menu = array();
-        $indexItem    = array();
+
         foreach ($order as $file => $name)
         {
 
+            $key_map = array_keys($order);
 
             foreach ($menu as $k => $item)
             {
+
+                // Index
+                $file_name_without_extension = isset($item['file']) ? File::removeExtension($item['file']) : '';
+
+                if (!empty($file_name_without_extension) && $file_name_without_extension == Config::get('project.default_file_in_folder') && !in_array($file_name_without_extension, $key_map))
+                {
+                    unset($menu[$k]);
+                    continue;
+                }
+
 
                 if (isset($item['file']) && File::removeExtension($item['file']) == $file)
                 {
@@ -252,12 +275,6 @@ class Menu
             }
         }
         $ordered_menu = array_merge($ordered_menu, $menu);
-
-        if (!empty($indexItem))
-        {
-            $ordered_menu = array_merge(array($indexItem), $ordered_menu);
-        }
-
 
         return $ordered_menu;
     }
@@ -287,7 +304,7 @@ class Menu
             else
             {
                 $file = $order_string;
-                $name = $this->guess_name($file, Config::get('menu.guess_separator'));
+                $name = $this->guessName($file, Config::get('menu.guess_separator'));
             }
 
             $orders[$file] = $name;
@@ -296,7 +313,7 @@ class Menu
     }
 
 
-    public function guess_name($name, $separator = array())
+    public function guessName($name, $separator = array())
     {
 
         $name = File::removeExtension($name);
@@ -308,7 +325,6 @@ class Menu
 
         return ucwords($name);
     }
-
 
 
 }
