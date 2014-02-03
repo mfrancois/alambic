@@ -247,3 +247,7 @@ Vous devriez voir un menu ordonné.
 License
 -------
 MIT: http://kezho.mit-license.org/
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mfrancois/alambic/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
