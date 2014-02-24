@@ -1,0 +1,2 @@
+index | Test index
+other | Test other

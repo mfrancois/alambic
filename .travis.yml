@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+notifications:
+  email:
+    recipients:
+      - kezho@me.com
+    on_success: [always|never|change] # default: change
+    on_failure: [always|never|change] # default: always
+
+before_script:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar require satooshi/php-coveralls:dev-master --dev --no-progress --prefer-source
+  - php composer.phar install --dev
+
+script:
+    - phpunit

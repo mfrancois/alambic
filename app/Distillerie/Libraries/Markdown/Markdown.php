@@ -36,6 +36,13 @@ class Markdown
 
     }
 
+    public function transform($md)
+    {
+        $parser  = new MarkdownParser();
+        $content = $parser->transformMarkdown($md);
+        return $content;
+    }
+
     public function all($tab)
     {
 
@@ -44,12 +51,12 @@ class Markdown
         {
             if (!empty($v['filepath']))
             {
-                $content .= $this->make(File::removeExtension($v['filepath']),false);
+                $content .= $this->make(File::removeExtension($v['filepath']), false);
             }
             else if ($v['dirpath'])
             {
 
-                $content .= $this->make($v['dirpath'] . Config::get('project.default_file_in_folder'),false);
+                $content .= $this->make($v['dirpath'] . Config::get('project.default_file_in_folder'), false);
             }
 
             if (!empty($v['children']))

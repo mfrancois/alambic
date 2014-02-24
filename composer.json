@@ -6,7 +6,8 @@
     "require": {
         "laravel/framework": "4.1.*",
         "dflydev/markdown": "1.0.*",
-        "roumen/sitemap": "dev-master"
+        "roumen/sitemap": "dev-master",
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "classmap": [
