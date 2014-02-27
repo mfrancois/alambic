@@ -1,4 +1,4 @@
-Alambic [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/alambic.png)](http://badges.enytc.com/for/gh/mfrancois/alambic)
+Alambic [![GH version](https://badge-me.herokuapp.com/api/gh/mfrancois/alambic.png)](http://badges.enytc.com/for/gh/mfrancois/alambic) [![Build Status](https://travis-ci.org/mfrancois/alambic.png?branch=feature/travis)](https://travis-ci.org/mfrancois/alambic)
 ==============================
 
 ## Description
